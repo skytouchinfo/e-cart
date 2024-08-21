@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../interfaces/product";
 
 @Component({
@@ -6,6 +6,26 @@ import {Product} from "../interfaces/product";
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
-    @Input('product') product?:Product
+export class ProductComponent implements OnInit {
+  @Input('product') product?: Product;
+  discountPercentage: number = 0;
+
+  constructor() {
+
+  }
+
+  ngOnInit(): void {
+    this.calculateDiscountPercentage();
+    console.log(this.calculateDiscountPercentage());
+  }
+
+  calculateDiscountPercentage(): number {
+    if (this.product && this.product.discountPrice) {
+      const totalPrice: number = this.product.price + this.product.discountPrice;
+      return Number(((100 * this.product.discountPrice) / totalPrice).toFixed(0));
+    }
+    return 0;
+  }
+
+
 }
