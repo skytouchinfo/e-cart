@@ -9,9 +9,9 @@
     <img [src]="product?.imageURL" class="ekart--product--image">
   </div>
   <div class="ekart--add--to--price">
-    {{product?.price}}
+    {{product?.price}}$
   </div>
   <div class="ekart--product--name">{{product?.name}}</div>
   <div class="ekart--product--category">{{product?.category}}</div>
-  <div class="ekart--product--available-colors">$COLORCOUNT Colors . Best Seller</div>
+  <div class="ekart--product--available-colors">{{product?.color?.length ?? 0}} Colors . Best Seller</div>
 </div>

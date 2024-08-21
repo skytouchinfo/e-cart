@@ -8,8 +8,9 @@ import {TopMenuComponent} from './header/top-menu/top-menu.component';
 import {MainMenuComponent} from './header/main-menu/main-menu.component';
 import {FormsModule} from "@angular/forms";
 import {ProductsComponent} from './products/products.component';
-import {ProductListComponent} from "./products/product-list/product-list.component";
-import {SearchComponent} from "./products/product-list/search/search.component";
+import {ProductComponent} from "./products/product/product.component";
+import {SearchComponent} from "./products/product/search/search.component";
+
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {SearchComponent} from "./products/product-list/search/search.component";
     TopMenuComponent,
     MainMenuComponent,
     ProductsComponent,
-    ProductListComponent,
+    ProductComponent,
     SearchComponent
   ],
   imports: [
