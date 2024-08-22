@@ -20,6 +20,5 @@ export class FilterComponent {
 
   onRadionBtnChange(): void {
     this.radioBtnEvent.emit(this.selectedRadionButtonValue);
-    console.log('selectedRadionButtonValue', this.selectedRadionButtonValue);
   }
 }

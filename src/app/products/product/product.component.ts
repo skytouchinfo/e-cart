@@ -16,7 +16,6 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.calculateDiscountPercentage();
-    console.log(this.calculateDiscountPercentage());
   }
 
   calculateDiscountPercentage(): number {

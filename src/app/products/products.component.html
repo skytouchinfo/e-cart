@@ -1,17 +1,23 @@
 <div class="container">
-  <app-search />
+  <app-search (onSearchTextChange)="onSearchFilter($event)" />
   <app-filter
     [productCount]="stockCount"
     (radioBtnEvent)="onFilterChange($event)"
   />
+
   <section class="ekart--products--container">
     <div class="product-container">
       <div *ngFor="let product of products; let i = index">
         <product
           [product]="product"
           *ngIf="
-            product.is_in_inventory.toString() === selectedFilter ||
-            selectedFilter === 'All'
+            (selectedFilter === 'All' ||
+              selectedFilter ===
+                (product.is_in_inventory ? 'true' : 'false')) &&
+            (searchFilterText === '' ||
+              product.name
+                .toLowerCase()
+                .includes(searchFilterText.toLowerCase()))
           "
         />
       </div>

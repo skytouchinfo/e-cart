@@ -11,6 +11,8 @@ export class ProductsComponent {
   products: Product[] = products;
   stockCount: ProductCount;
   selectedFilter: string = 'All';
+  searchFilterText: string = '';
+  
 
   constructor() {
     this.stockCount = this.calculateStockCounts();
@@ -33,5 +35,10 @@ export class ProductsComponent {
 
   onFilterChange($event: string) {
     this.selectedFilter = $event;
+  }
+
+  onSearchFilter($event: string) {
+    console.log("🚀 ~ ProductsComponent ~ onSearchFilter ~ event:", event)
+    this.searchFilterText = $event;
   }
 }
