@@ -1,5 +1,13 @@
 <div class="ekart--search--product">
-  <input class="ekart-search-product-input"  [(ngModel)]="searchText">
-  <button class="btn btn-search">Search</button>
+  <input class="ekart-search-product-input" [(ngModel)]="searchText" />
+  <button
+    class="btn btn-search"
+    [ngClass]="{ 'btn-search-disabled': !searchText }"
+    [disabled]="!searchText"
+  >
+    Search
+  </button>
 </div>
-<div *ngIf="searchText" class="ekart-search-result-for"><p><strong>Search result for:</strong> {{ searchText }}</p></div>
+<div *ngIf="searchText" class="ekart-search-result-for">
+  <p><strong>Search result for:</strong> {{ searchText }}</p>
+</div>

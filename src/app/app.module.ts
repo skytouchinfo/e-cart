@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {ProductsComponent} from './products/products.component';
 import {ProductComponent} from "./products/product/product.component";
 import {SearchComponent} from "./products/product/search/search.component";
+import { FilterComponent } from './products/filter/filter.component';
 
 
 
@@ -22,7 +23,8 @@ import {SearchComponent} from "./products/product/search/search.component";
     MainMenuComponent,
     ProductsComponent,
     ProductComponent,
-    SearchComponent
+    SearchComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

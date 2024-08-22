@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="radio-container">
+    <b>Filter:</b>
+    <div>
+      <input
+        type="radio"
+        name="filter"
+        id="all"
+        value="All"
+        [(ngModel)]="selectedRadionButtonValue"
+        (change)="onRadionBtnChange()"
+      />
+      <label for="all">Total ({{ productCount.total }})</label>
+    </div>
+    <div>
+      <input
+        type="radio"
+        name="filter"
+        id="instock"
+        value="true"
+        [(ngModel)]="selectedRadionButtonValue"
+        (change)="onRadionBtnChange()"
+      />
+      <label for="instock">In Stock ({{ productCount.inStock }})</label>
+    </div>
+    <div>
+      <input
+        type="radio"
+        name="filter"
+        id="outOfStock"
+        value="false"
+        [(ngModel)]="selectedRadionButtonValue"
+        (change)="onRadionBtnChange()"
+      />
+      <label for="outOfStock"
+        >Out of stock ({{ productCount.outOfStock }})</label
+      >
+    </div>
+  </div>
+</div>

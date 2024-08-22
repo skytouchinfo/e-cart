@@ -1,4 +1,20 @@
-<app-search/>
-<section class="ekart--products--container">
-  <product *ngFor="let product of products; let i = index" [product]="product"/>
-</section>
+<div class="container">
+  <app-search />
+  <app-filter
+    [productCount]="stockCount"
+    (radioBtnEvent)="onFilterChange($event)"
+  />
+  <section class="ekart--products--container">
+    <div class="product-container">
+      <div *ngFor="let product of products; let i = index">
+        <product
+          [product]="product"
+          *ngIf="
+            product.is_in_inventory.toString() === selectedFilter ||
+            selectedFilter === 'All'
+          "
+        />
+      </div>
+    </div>
+  </section>
+</div>
