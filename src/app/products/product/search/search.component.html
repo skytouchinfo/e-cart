@@ -1,4 +1,4 @@
-<div class="ekart--search--product">
+<!-- <div class="ekart--search--product">
   <input
     type="text"
     class="ekart-search-product-input"
@@ -15,4 +15,10 @@
 </div>
 <div *ngIf="searchText" class="ekart-search-result-for">
   <p><strong>Search result for:</strong> {{ searchText }}</p>
-</div>
+</div> -->
+<nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+  <input type="text" nz-input placeholder="input search text" />
+</nz-input-group>
+<ng-template #suffixButton>
+  <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+</ng-template>
