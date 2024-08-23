@@ -1,5 +1,5 @@
 <div class="container">
-  <app-search (onSearchTextChange)="onSearchFilter($event)" />
+  <app-search (onSearchTextChange)="onSearchFilter($event)" [options]="options"/>
   <app-filter
     [productCount]="stockCount"
     (radioBtnEvent)="onFilterChange($event)"

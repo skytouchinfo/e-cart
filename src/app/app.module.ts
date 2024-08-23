@@ -19,6 +19,8 @@ import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { ImagePreloadDirective } from './directives/imagePreload.directive';
 
 registerLocaleData(en);
 
@@ -33,6 +35,7 @@ registerLocaleData(en);
     ProductComponent,
     SearchComponent,
     FilterComponent,
+    ImagePreloadDirective,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzInputModule,
     NzButtonModule,
+    NzAutocompleteModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

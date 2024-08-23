@@ -16,9 +16,41 @@
 <div *ngIf="searchText" class="ekart-search-result-for">
   <p><strong>Search result for:</strong> {{ searchText }}</p>
 </div> -->
-<nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
-  <input type="text" nz-input placeholder="input search text" />
-</nz-input-group>
-<ng-template #suffixButton>
-  <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
-</ng-template>
+<div class="ekart--search--product">
+  <nz-input-group
+    nzSearch
+    nzSize="default"
+    class="ekart-search-product-input"
+    [nzAddOnAfter]="suffixButton"
+  >
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      nz-input
+      (keydown)="onEnter($event)"
+      placeholder="input search text"
+      (input)="onSearchTextInputChange($event)"
+      [nzAutocomplete]="auto"
+    />
+    <nz-autocomplete
+      [nzDataSource]="options"
+      (selectionChange)="onSelect($event)"
+      nzBackfill
+      #auto
+    ></nz-autocomplete>
+  </nz-input-group>
+  <ng-template #suffixButton>
+    <button
+      nz-button
+      nzType="primary"
+      nzSize="default"
+      nzSearch
+      [disabled]="!searchText"
+    >
+      Search
+    </button>
+  </ng-template>
+</div>
+<div *ngIf="searchText" class="ekart-search-result-for">
+  <p><strong>Search result for:</strong> {{ searchText }}</p>
+</div>

@@ -12,7 +12,11 @@ export class ProductsComponent {
   stockCount: ProductCount;
   selectedFilter: string = 'All';
   searchFilterText: string = '';
-  
+  options: string[] = this.products
+    .filter((product) =>
+      product.name.toLowerCase().includes(this.searchFilterText.toLowerCase())
+    )
+    .map((product) => product.name);
 
   constructor() {
     this.stockCount = this.calculateStockCounts();
@@ -38,7 +42,20 @@ export class ProductsComponent {
   }
 
   onSearchFilter($event: string) {
-    console.log("🚀 ~ ProductsComponent ~ onSearchFilter ~ event:", event)
     this.searchFilterText = $event;
+    console.log(
+      '🚀 ~ ProductsComponent ~ onSearchFilter ~ event:',
+      this.searchFilterText
+    );
+    if (this.searchFilterText) {
+      this.options = this.products
+        .filter((product) =>
+          product.name
+            .toLowerCase()
+            .includes(this.searchFilterText.toLowerCase())
+        )
+        .map((product) => product.name);
+    } else {
+    }
   }
 }

@@ -7,12 +7,9 @@
 }
 .ekart-search-product-input{
   width: 40%;
-  height: 5.5vh;
-  padding: 1px 10px;
   outline: none;
   border-radius: 2px;
-  background-color: #efefef;
-  border:#28282B 1px solid;
+
 }
 
 

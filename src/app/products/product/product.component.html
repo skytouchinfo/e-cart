@@ -3,19 +3,30 @@
     <div class="ekart--add--to--wishlist">
       <i class="fa fa-heart-o" aria-hidden="true"></i>
     </div>
-    <div class="ekart-on-sale-tag" *ngIf="product?.discountPrice">{{ this.calculateDiscountPercentage() }}% OFF</div>
+    <div class="ekart-on-sale-tag" *ngIf="product?.discountPrice">
+      {{ this.calculateDiscountPercentage() }}% OFF
+    </div>
   </div>
   <div class="ekart--product--image">
-    <img [src]="product?.imageURL" class="ekart--product--image">
+    <img
+      default="https://imgs.search.brave.com/7uex0FH3j7zh4DjsfLDqEtGwqVPT60i_mqiAmDIFuxs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJzLzIwNTM1/L3NjcmVlbnNob3Rz/LzE0Mzk3ODcvbWVk/aWEvZDA0ZWIwOWRi/ZmJmNzY5MTYwYzQw/NDFmNDg3MmM3YTAu/cG5nP3Jlc2l6ZT00/MDB4MA"
+      [src]="product?.imageURL"
+      class="ekart--product--image"
+    />
   </div>
-  <div class="ekart--add--to--price">
-    {{ product?.price }}$
-  </div>
+  <div class="ekart--add--to--price">{{ product?.price }}$</div>
   <div class="ekart--product--name">{{ product?.name }}</div>
   <div class="ekart--product--category">{{ product?.category }}</div>
-  <div class="ekart--product--available-colors">{{ product?.color?.length ?? 0 }} Colors . Best Seller</div>
-  <div [ngStyle]="{fontWeight:'bold',color:product?.is_in_inventory ? 'green':'red'}"
-       class="ekart--product--available-stock">
+  <div class="ekart--product--available-colors">
+    {{ product?.color?.length ?? 0 }} Colors . Best Seller
+  </div>
+  <div
+    [ngStyle]="{
+      fontWeight: 'bold',
+      color: product?.is_in_inventory ? 'green' : 'red'
+    }"
+    class="ekart--product--available-stock"
+  >
     {{ product?.is_in_inventory ? "Available in stock" : "Not Available!" }}
   </div>
 </div>
