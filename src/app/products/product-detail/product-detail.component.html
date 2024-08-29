@@ -1,0 +1,19 @@
+<nz-drawer
+  [nzSize]="size"
+  [nzVisible]="visible"
+  nzPlacement="right"
+  [nzTitle]="title"
+  [nzExtra]="extra"
+  (nzOnClose)="close()"
+>
+  <ng-container *nzDrawerContent>
+    <p>{{selectedProduct?.name}}</p>
+    <p>Some contents...</p>
+    <p>Some contents...</p>
+  </ng-container>
+</nz-drawer>
+<ng-template #extra>
+  <button nz-button nzType="default" (click)="close()">Cancel</button>
+  &nbsp;
+  <button nz-button nzType="primary" (click)="close()">OK</button>
+</ng-template>

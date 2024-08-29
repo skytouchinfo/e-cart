@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { ImagePreloadDirective } from './directives/imagePreload.directive';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 
 registerLocaleData(en);
 
@@ -36,6 +38,7 @@ registerLocaleData(en);
     SearchComponent,
     FilterComponent,
     ImagePreloadDirective,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ registerLocaleData(en);
     NzInputModule,
     NzButtonModule,
     NzAutocompleteModule,
+    NzDrawerModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

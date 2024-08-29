@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Product, ProductCount } from './interfaces/product';
 import { products } from '../data/product.data';
 
@@ -9,6 +9,7 @@ import { products } from '../data/product.data';
 })
 export class ProductsComponent {
   products: Product[] = products;
+  selectedProduct?: Product;
   stockCount: ProductCount;
   selectedFilter: string = 'All';
   searchFilterText: string = '';
@@ -17,9 +18,11 @@ export class ProductsComponent {
       product.name.toLowerCase().includes(this.searchFilterText.toLowerCase())
     )
     .map((product) => product.name);
+  showProduct: boolean = false;
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
     this.stockCount = this.calculateStockCounts();
+    console.log('selectedProduct', this.selectedProduct);
   }
 
   private calculateStockCounts(): ProductCount {
@@ -37,16 +40,23 @@ export class ProductsComponent {
     );
   }
 
+  handleProduct(product: Product) {
+    console.log("🚀 ~ ProductsComponent ~ handleProduct ~ product:", product)
+    this.selectedProduct = product;
+    this.showProduct = !this.showProduct;
+    this.cdr.detectChanges();
+  }
+
+  closeDrawer() {
+    this.showProduct = false;
+  }
+
   onFilterChange($event: string) {
     this.selectedFilter = $event;
   }
 
   onSearchFilter($event: string) {
     this.searchFilterText = $event;
-    console.log(
-      '🚀 ~ ProductsComponent ~ onSearchFilter ~ event:',
-      this.searchFilterText
-    );
     if (this.searchFilterText) {
       this.options = this.products
         .filter((product) =>
