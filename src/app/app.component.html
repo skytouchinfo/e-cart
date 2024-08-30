@@ -1,3 +1,10 @@
 <top-header />
 <app-header />
-<app-products />
+<app-products #appProduct />
+
+<!-- NOTE: This is product details component which is open on product click the above example is represnt to pass component ref as property -->
+<app-product-detail
+  (closeDrawerEvent)="appProduct.closeDrawer()"
+  [selectedProduct]="appProduct.selectedProduct"
+  [visible]="appProduct.showProduct"
+/>
