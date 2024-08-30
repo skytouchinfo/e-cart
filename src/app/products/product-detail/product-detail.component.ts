@@ -14,7 +14,7 @@ export class ProductDetailComponent {
   size: 'large' | 'default' = 'default';
 
   get title(): string {
-    return `${this.size} Drawer`;
+    return `Product Details`;
   }
 
   showDefault(): void {

@@ -7,10 +7,38 @@
   (nzOnClose)="close()"
 >
   <ng-container *nzDrawerContent>
-    <p>{{selectedProduct?.name}}</p>
-    <p>Some contents...</p>
-    <p>Some contents...</p>
+    <p class="text-center fw-bold">{{ selectedProduct?.name }}</p>
+    <div class="container text-center">
+      <nz-card
+        nzHoverable
+        style="width: 240px; margin: auto"
+        [nzCover]="coverTemplate"
+      >
+        <nz-card-meta
+          [nzTitle]="selectedProduct ? selectedProduct.name : 'Not Found'"
+          [nzDescription]="template"
+        >
+          <ng-template #template>
+            <b>Price:  {{ selectedProduct?.price }}$ </b>
+          </ng-template>
+        </nz-card-meta>
+        <nz-tag
+          *ngFor="let color of selectedProduct?.color"
+          [nzColor]="color"
+          class="mt-3 border-1 border-black rounded-5"
+          [ngStyle]="{ color: color == 'White' ? 'black' : 'white' }"
+          >{{ color }}</nz-tag
+        >
+      </nz-card>
+      <div class="m-auto my-3 w-75">
+        <button nz-button nzType="primary" [nzBlock]="true">Checkout</button>
+      </div>
+    </div>
   </ng-container>
+
+  <ng-template #coverTemplate>
+    <img alt="example" [src]="selectedProduct?.imageURL" />
+  </ng-template>
 </nz-drawer>
 <ng-template #extra>
   <button nz-button nzType="default" (click)="close()">Cancel</button>
