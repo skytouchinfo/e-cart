@@ -23,6 +23,8 @@ import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { ImagePreloadDirective } from './directives/imagePreload.directive';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzTagModule } from 'ng-zorro-antd/tag'
 
 registerLocaleData(en);
 
@@ -48,7 +50,9 @@ registerLocaleData(en);
     NzInputModule,
     NzButtonModule,
     NzAutocompleteModule,
-    NzDrawerModule
+    NzDrawerModule,
+    NzCardModule,
+    NzTagModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
