@@ -24,7 +24,13 @@ import { ImagePreloadDirective } from './directives/imagePreload.directive';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzTagModule } from 'ng-zorro-antd/tag'
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzTreeModule } from 'ng-zorro-antd/tree';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { HeroModule } from './hero/hero.module';
+import { HeroComponent } from './hero/hero.component';
+
 
 registerLocaleData(en);
 
@@ -41,6 +47,7 @@ registerLocaleData(en);
     FilterComponent,
     ImagePreloadDirective,
     ProductDetailComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,11 @@ registerLocaleData(en);
     NzAutocompleteModule,
     NzDrawerModule,
     NzCardModule,
-    NzTagModule
+    NzTagModule,
+    NzBadgeModule,
+    NzTreeModule,
+    NzCollapseModule,
+    HeroModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

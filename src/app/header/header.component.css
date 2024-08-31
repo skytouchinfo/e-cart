@@ -1,45 +1,86 @@
-.ekart--header{
-  width: 100%;
-  height: 11vh;
-  display:flex;
-  flex-wrap: wrap;
-  border-bottom: #E5E4E2 1.5px solid;
+.header-container .devider{
+  /* border-bottom: 1px solid #c9c6c6; */
+  /* box-shadow: 1px 3px 13px 0px rgba(201,198,198,1); */
+  width: 100vw; /* Ensures the image spans the full viewport width */
+  display: block; /* Ensures the image is displayed as a block-level element */
+  max-width: 100%; /* Prevents the image from overflowing its container */
+  height: auto; /* Adjusts height automatically based on the image aspect ratio */
 }
 
-.ekart-logo{
-  padding: 1.2vh 8vh;
-  font-size: 40px;
-  font-weight: bold;
-  color: #36454F;
-  font-family: 'Concert One', cursive;
-  width:20%;
-
-}
-.ekart--header--nav{
-  width: 80%;
-  padding: 1vh 2vh;
-  font-size: 10px;
-}
-
-
-.ekart--bottom--bar{
-  display: flex;
-}
-
-a{
-  text-decoration: none;
-  padding: 0 10px;
-  color: #28282B;
-}
-
-
-.btn{
+.btn {
   padding: 15px 25px;
   border: none;
   margin: 10px 0px;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #28282B;
   color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.menu-list {
+  list-style: none;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.menu-list li a {
+  font-size: 16px;
+}
+
+.menu-list li a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.input-search-group {
+  width: 240px;
+  background-color: #F5F5F5;
+  height: 38px;
+  display: flex;
+  gap: 10px;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 4px;
+}
+
+.input-search-group img {
+  width: 16px;
+  height: 16px;
+}
+
+.input-search-group .input-search {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  width: 100%;
+}
+
+.input-search-group .input-search:focus {
+  box-shadow: none !important;
+}
+
+.users-container {
+  gap: 24px;
+}
+
+
+.user-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }

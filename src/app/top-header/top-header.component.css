@@ -1,9 +1,12 @@
 .ekart--top-header{
-  height: 5vh;
+  height: 48px;
   background-color: #28282B;
   text-align: center;
-  color: white;
-  padding-top: 1.5vh;
-  font-size: 12px;
-  font-weight: bold;
+  color: #FAFAFA;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
+

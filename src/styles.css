@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* @import "~ng-zorro-antd/ng-zorro-antd.min.css"; */
 
 * {
@@ -11,11 +12,30 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: "Poppins", sans-serif;
 }
 
 a {
   text-decoration: none;
   padding: 0 10px;
   color: #28282B;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.text-underline{
+  text-decoration: underline;
+}
+
+.e-container{
+  width: calc(100vw - 15vw);
+  position: relative;
+  left: 135px;
+}
+ul{
+  margin: 0;
 }

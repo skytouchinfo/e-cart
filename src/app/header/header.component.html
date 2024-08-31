@@ -1,16 +1,50 @@
-<div class="ekart--header">
-  <div class="ekart-logo">
-    <!-- <img src="images/logo.jpeg"> -->
-    eKart
-  </div>
-  <div class="ekart--header--nav">
-    <!--  top menu -->
-    <top-menu/>
+<div class="header-container">
+  <nav class="e-container">
+    <div class="nav-container d-flex align-items-center">
+      <div class="logo">Exclusive</div>
+      <div class="menu-container">
+        <ul
+          class="menu-list fw-medium d-flex align-content-center align-items-center"
+        >
+          <li><a class="" href="#">Home</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Sign Up</a></li>
+        </ul>
+      </div>
+      <div class="users-container d-flex align-items-center">
+        <div class="search-container">
+          <div class="input-search-group">
+            <!-- <input type="search" placeholder="What are you looking for?" /> -->
+            <nz-input-group
+              nzSearch
+              nzSize="default"
+              class="ekart-search-product-input"
+            >
+              <input
+                type="text"
+                nz-input
+                class="input-search"
+                placeholder="input search text"
+                [nzAutocomplete]="auto"
+              />
+              <nz-autocomplete nzBackfill #auto></nz-autocomplete>
+            </nz-input-group>
+            <img src="assets/icons/search.png" alt="search" />
+          </div>
+        </div>
+        <div class="user-actions">
+          <nz-badge [nzCount]="likedCount">
+            <img src="assets/icons/like.png" alt="like" />
+          </nz-badge>
+          <nz-badge [nzCount]="0">
+            <img src="assets/icons/cart.png" alt="cart" />
+          </nz-badge>
 
-    <!--    main menu -->
-    <div class="ekart--bottom--bar">
-      <main-menu/>
+          <img src="assets/icons/user.png" alt="user" />
+        </div>
+      </div>
     </div>
-
-  </div>
+  </nav>
+  <img class="devider img-fluid" src="assets/images/utility/devider.png" alt="">
 </div>
