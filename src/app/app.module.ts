@@ -30,6 +30,7 @@ import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { HeroModule } from './hero/hero.module';
 import { HeroComponent } from './hero/hero.component';
+import { NewProductComponent } from './products/new-product/new-product.component';
 
 
 registerLocaleData(en);
@@ -47,7 +48,8 @@ registerLocaleData(en);
     FilterComponent,
     ImagePreloadDirective,
     ProductDetailComponent,
-    HeroComponent
+    HeroComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
@@ -68,4 +70,5 @@ registerLocaleData(en);
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
+  
 export class AppModule {}

@@ -1,3 +1,8 @@
+.header-container {
+  border-bottom: 1px solid var(--border-primary);
+  /* box-shadow: 1px 3px 13px 0px rgba(201,198,198,1); */
+}
+
 .header-container .devider{
   /* border-bottom: 1px solid #c9c6c6; */
   /* box-shadow: 1px 3px 13px 0px rgba(201,198,198,1); */

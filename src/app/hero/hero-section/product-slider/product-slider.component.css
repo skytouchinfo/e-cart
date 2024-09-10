@@ -1,0 +1,33 @@
+.product-slider-container {
+    margin-top: 14px;
+    margin-left: 46px;
+}
+
+.navigate-slider {
+    top: 92%;
+    left: 50%;
+}
+
+/* [nz-carousel-content] {
+    text-align: center;
+    height: 344px;
+    line-height: 160px;
+    background: #364d79;
+    color: #fff;
+    overflow: visible;
+}
+
+ */
+
+
+ .nz-carousel-content {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+  }
+  
+  .nz-carousel-content img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover !important; /* Ensure the image covers the container */
+  }

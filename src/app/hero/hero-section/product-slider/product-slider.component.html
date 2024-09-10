@@ -1,3 +1,43 @@
-<p>
-  product-slider works!
-</p>
+<div class="product-slider-container">
+  <nz-carousel nzAutoPlay>
+    <div nz-carousel-content *ngFor="let slide of slides">
+      <img style="height: 344px;" [src]="slide.imageSrc" class="img-fluid w-100" alt="slides" />
+    </div>
+  </nz-carousel>
+  
+</div>
+
+<!-- <div
+    id="carouselExampleFade"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        *ngFor="let slide of slides; let i = index"
+        class="carousel-item"
+        [ngClass]="{ active: i === currentSlideIndex }"
+      >
+        <img
+          [src]="slide.imageSrc"
+          class="d-block w-100"
+          [alt]="slide.altText"
+        />
+      </div>
+      <div class="position-absolute navigate-slider">
+        <div class="contorl-slider d-flex gap-2 z-3"> -->
+<!-- src="/assets/images/utility/active-dot.png" -->
+<!-- <img
+            *ngFor="let slide of slides; let i = index"
+            [src]="
+              i === currentSlideIndex
+                ? '/assets/images/utility/active-dot.png'
+                : '/assets/images/utility/dot.png'
+            "
+            alt="dtssfc"
+            (click)="goToSlide(i)"
+          />
+        </div>
+      </div>
+    </div>
+  </div> -->

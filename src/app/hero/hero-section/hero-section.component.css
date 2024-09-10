@@ -1,0 +1,10 @@
+.hero-section-container{
+    /* position: relative; */
+    /* bottom: 10px; */
+    height: 384px;
+}
+
+
+.category-list-container {
+    border-right: 1px solid var(--border-primary);
+}

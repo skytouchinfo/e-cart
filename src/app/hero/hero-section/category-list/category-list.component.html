@@ -1,3 +1,23 @@
-<p>
-  category-list works!
-</p>
+<div class="category-list-container">
+  <nz-collapse class="panel-group" [nzBordered]="false" nzAccordion>
+    <nz-collapse-panel
+      *ngFor="let category of categoryList"
+      [nzHeader]="title"
+      [nzShowArrow]="false"
+      class="expension-panel"
+    >
+      <ng-template #title>
+        <div class="panel-header-content">
+          <p>{{ category.title }}</p>
+          <img
+            src="assets/icons/arrow-right.png"
+            alt="arrow"
+          />
+        </div>
+      </ng-template>
+      <p *ngFor="let subcategory of category.subItems">
+        {{ subcategory.title }}
+      </p>
+    </nz-collapse-panel>
+  </nz-collapse>
+</div>
